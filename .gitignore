@@ -38,3 +38,7 @@ yarn-error.log*
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
+
+#build and package files
+.sitemap-*.xml
+.git add material-tailwind-qb-*tgz
