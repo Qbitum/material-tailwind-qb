@@ -1,5 +1,5 @@
 {
-  "name": "@material-tailwind-qb/react",
+  "name": "@qbitum/material-react",
   "homepage": "https://material-tailwind.com",
   "version": "2.1.9",
   "description": "@material-tailwind/react is an easy-to-use components library for ReactJS & Tailwind CSS inspired by Material Design.",
@@ -8,7 +8,7 @@
   "main": "index.js",
   "typings": "index.d.ts",
   "publishConfig": {
-    "access": "public"
+    "registry": "https://saastackdev.qbitum.net/repository/qbitum-dev"
   },
   "scripts": {
     "build:cjs": "swc ./src -d ./dist --only ./src/**/*.ts --config-file .swcrc",

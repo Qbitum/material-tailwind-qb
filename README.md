@@ -1,41 +1,8 @@
-<a href="https://www.material-tailwind.com">
-    <img width="100%" src="./public/image/material-tailwind-readme.jpg" alt="material-tailwind" style="border-radius: 24px" />
-    <h1 align="center">Material Tailwind</h1>
-</a>
-</br>
-<p align="center">
-  <a href="https://github.com/creativetimofficial/material-tailwind/blob/main/LICENSE">
-    <img src="https://img.shields.io/npm/l/@material-tailwind/react?label=%40material-taiwlind%2Freact" alt="License" />
-  </a>
-  <a href="https://www.npmjs.com/package/@material-tailwind/react">
-    <img src="https://img.shields.io/npm/dt/@material-tailwind/react.svg" alt="Total Downloads">
-  </a>
-  <a href="https://github.com/creativetimofficial/material-tailwind/releases">
-    <img src="https://img.shields.io/badge/version-2.1.9-blue.svg" alt="Version" />
-  </a>
-</p>
-<p align="center">
-  <a href="https://github.com/creativetimofficial/material-tailwind/blob/main/LICENSE">
-    <img src="https://img.shields.io/npm/l/@material-tailwind/html?label=%40material-taiwlind%2Fhtml" alt="License" />
-  </a>
-  <a href="https://www.npmjs.com/package/@material-tailwind/html">
-    <img src="https://img.shields.io/npm/dt/@material-tailwind/html.svg" alt="Total Downloads">
-  </a>
-  <a href="https://github.com/creativetimofficial/material-tailwind/releases">
-    <img src="https://img.shields.io/badge/version-2.2.2-blue.svg" alt="Version" />
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://vercel.com/?utm_source=ct-tailwind-team&utm_campaign=oss" target="_blank" rel="noopener noreferrer">
-     <img width="30%" src="./public/img/vercel-logo.png" alt="Vercel" />
-  </a>
-</p>
-
-<br />
-<br />
 
 ## @material-tailwind/react
+###
+publish npm library
+npm publish <package name>
 
 ### Documentation
 
