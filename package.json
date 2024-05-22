@@ -14,7 +14,8 @@
     "pack:react": "npm pack ./packages/material-tailwind-react/dist",
     "start": "next start",
     "export": "next export",
-    "lint": "next lint"
+    "lint": "next lint",
+    "artifactregistry-login": "npx google-artifactregistry-auth"
   },
   "dependencies": {
     "@docsearch/css": "3.5.1",
