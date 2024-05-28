@@ -9,6 +9,8 @@ navigation:
     "avatar-with-border",
     "avatar-with-text",
     "avatar-stack",
+    "avatar-with-dot-indicator",
+    avatar-with-user-dropdown,
     "avatar-custom-styles",
     "avatar-props",
     "types-variant",
@@ -261,6 +263,160 @@ export function AvatarStack() {
 
 ---
 
+<DocsTitle href="avatar-with-dot-indicator">
+## Avatar with Dot Indicator
+</DocsTitle>
+
+<CodePreview component={<AvatarExamples.AvatarWithDotIndicator />}>
+```jsx
+import { Avatar, Badge } from "@material-tailwind/react";
+
+export function AvatarWithDotIndicator() {
+  return (
+    <div className="flex gap-4">
+      <Badge placement="top-end" overlap="circular" color="green" withBorder>
+        <Avatar
+          src="https://docs.material-tailwind.com/img/face-2.jpg"
+          alt="avatar"
+        />
+      </Badge>
+      <Badge placement="top-end" color="green" withBorder>
+        <Avatar
+          src="https://docs.material-tailwind.com/img/face-2.jpg"
+          alt="avatar"
+          variant="rounded"
+        />
+      </Badge>
+      <Badge placement="bottom-end" overlap="circular" color="red" withBorder>
+        <Avatar
+          src="https://docs.material-tailwind.com/img/face-2.jpg"
+          alt="avatar"
+        />
+      </Badge>
+      <Badge placement="bottom-end" color="red" withBorder>
+        <Avatar
+          src="https://docs.material-tailwind.com/img/face-2.jpg"
+          alt="avatar"
+          variant="rounded"
+        />
+      </Badge>
+    </div>
+  );
+}
+```
+</CodePreview>
+
+---
+
+<DocsTitle href="avatar-with-user-dropdown">
+## Avatar with User dropdown
+</DocsTitle>
+
+<CodePreview component={<AvatarExamples.AvatarWithUserDropdown />}>
+```jsx
+import React from "react";
+import {
+  Avatar,
+  Button,
+  Menu,
+  MenuHandler,
+  MenuItem,
+  MenuList,
+  Typography,
+} from "@material-tailwind/react";
+import {
+  Cog6ToothIcon,
+  InboxArrowDownIcon,
+  LifebuoyIcon,
+  PowerIcon,
+  UserCircleIcon,
+} from "@heroicons/react/24/solid";
+
+// profile menu component
+const profileMenuItems = [
+  {
+    label: "My Profile",
+    icon: UserCircleIcon,
+  },
+  {
+    label: "Edit Profile",
+    icon: Cog6ToothIcon,
+  },
+  {
+    label: "Inbox",
+    icon: InboxArrowDownIcon,
+  },
+  {
+    label: "Help",
+    icon: LifebuoyIcon,
+  },
+  {
+    label: "Sign Out",
+    icon: PowerIcon,
+  },
+];
+
+export function AvatarWithUserDropdown() {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+  const closeMenu = () => setIsMenuOpen(false);
+
+  return (
+    <Menu open={isMenuOpen} handler={setIsMenuOpen} placement="bottom-end">
+      <MenuHandler>
+        <Button
+          variant="text"
+          color="blue-gray"
+          className="flex items-center rounded-full p-0"
+        >
+          <Avatar
+            variant="circular"
+            size="md"
+            alt="tania andrew"
+            withBorder={true}
+            color="blue-gray"
+            className=" p-0.5"
+            src="https://docs.material-tailwind.com/img/face-2.jpg"
+          />
+        </Button>
+      </MenuHandler>
+      <MenuList className="p-1">
+        {profileMenuItems.map(({ label, icon }, key) => {
+          const isLastItem = key === profileMenuItems.length - 1;
+          return (
+            <MenuItem
+              key={label}
+              onClick={closeMenu}
+              className={`flex items-center gap-2 rounded ${
+                isLastItem
+                  ? "hover:bg-red-500/10 focus:bg-red-500/10 active:bg-red-500/10"
+                  : ""
+              }`}
+            >
+              {React.createElement(icon, {
+                className: `h-4 w-4 ${isLastItem ? "text-red-500" : ""}`,
+                strokeWidth: 2,
+              })}
+              <Typography
+                as="span"
+                variant="small"
+                className="font-normal"
+                color={isLastItem ? "red" : "inherit"}
+              >
+                {label}
+              </Typography>
+            </MenuItem>
+          );
+        })}
+      </MenuList>
+    </Menu>
+  );
+}
+```
+</CodePreview>
+
+---
+
 <DocsTitle href="avatar-custom-styles">
 ## Avatar with Custom Styles
 </DocsTitle>
@@ -342,7 +498,7 @@ type size = "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
 ## Types - Color
 </DocsTitle>
 
-Set of predefined colors available for our Avatar component. Choose from our extensive 20+ list of colors like: orange, brown, amber, yellow, blue, etc. Customize the component to fit your web project’s needs.
+Set of predefined colors available for our Avatar component. Choose from our extensive 20+ list of colors like: orange, brown, amber, yellow, blue, etc. Customize the component to fit your web project's needs.
 
 ```ts
 type color =
