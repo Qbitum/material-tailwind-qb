@@ -22,8 +22,7 @@ export type colors =
   | "deep-purple"
   | "purple"
   | "pink"
-  | "red"
-  | "black";
+  | "red";
 
 export type animation = {
   initial?: object;
