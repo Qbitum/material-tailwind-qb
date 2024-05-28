@@ -196,6 +196,14 @@ export const routes = [
         route: "popover",
       },
       {
+        name: "Page",
+        route: "page",
+      },
+      {
+        name: "FileUpload",
+        route: "fileUpload",
+      },
+      {
         name: "Progress Bar",
         route: "progress-bar",
       },
