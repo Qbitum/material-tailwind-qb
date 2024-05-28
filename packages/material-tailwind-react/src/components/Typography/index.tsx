@@ -18,6 +18,7 @@ import type {
   asType,
   className,
   children,
+  onClick,
 } from "../../types/components/typography";
 import {
   propTypesVariant,
@@ -26,6 +27,7 @@ import {
   propTypesAs,
   propTypesClassName,
   propTypesChildren,
+  propTypesOnClick,
 } from "../../types/components/typography";
 
 type Props<T extends keyof JSX.IntrinsicElements> = React.ComponentProps<T>;
@@ -45,10 +47,11 @@ export interface TypographyProps extends BaseTypographyProps {
   as?: asType;
   className?: className;
   children: children;
+  onClick?: onClick;
 }
 
 export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
-  ({ variant, color, textGradient, as, className, children, ...rest }, ref) => {
+  ({ variant, color, textGradient, as, className, children, onClick, ...rest }, ref) => {
     // 1. init
     const { typography } = useTheme();
     const { defaultProps, valid, styles } = typography;
@@ -60,6 +63,7 @@ export const Typography = React.forwardRef<HTMLElement, TypographyProps>(
     textGradient = textGradient || defaultProps.textGradient;
     as = as ?? undefined;
     className = twMerge(defaultProps.className || "", className);
+    onClick = onClick ?? defaultProps.onClick;
 
     // 3. set styles
     const typographyVariant = objectsToString(
@@ -205,6 +209,7 @@ Typography.propTypes = {
   textGradient: propTypesTextGradient,
   className: propTypesClassName,
   children: propTypesChildren,
+  onClick: propTypesOnClick,
 };
 
 Typography.displayName = "MaterialTailwind.Typography";
