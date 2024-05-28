@@ -1,6 +1,6 @@
 {
   "name": "material-tailwind-qb",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "homepage": "https://material-tailwind.com",
   "description": "Material Tailwind is an easy-to-use components library for Tailwind CSS inspired by Material Design.",
   "repository": "https://github.com/creativetimofficial/material-tailwind",
@@ -11,7 +11,7 @@
     "sitemap": "next-sitemap",
     "build:react": "pnpm --filter ./packages/material-tailwind-react build",
     "build:html": "pnpm --filter ./packages/material-tailwind-html build",
-    "pack:react":"npm pack ./packages/material-tailwind-react/dist",
+    "pack:react": "npm pack ./packages/material-tailwind-react/dist",
     "start": "next start",
     "export": "next export",
     "lint": "next lint"
