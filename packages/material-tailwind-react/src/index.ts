@@ -33,7 +33,10 @@ export * from "./components/Spinner";
 export * from "./components/Timeline";
 export * from "./components/Stepper";
 export * from "./components/SpeedDial";
-
+export * from "./components/FileUpload";
+export * from "./components/SubHeader";
+export * from "./components/Page";
+export * from "./components/SuccessPopUp";
 // context
 export * from "./context/theme";
 

@@ -204,8 +204,16 @@ export const routes = [
         route: "fileUpload",
       },
       {
+        name: "SubHeader",
+        route: "subHeader",
+      },
+      {
         name: "Progress Bar",
         route: "progress-bar",
+      },
+      {
+        name: "SuccessPopUp",
+        route: "successPopUp",
       },
       {
         name: "Pagination",
