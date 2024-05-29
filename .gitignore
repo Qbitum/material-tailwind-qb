@@ -41,5 +41,5 @@ pnpm-lock.yaml
 
 #build and package files
 .sitemap-*.xml
-.git add material-tailwind-qb-*tgz
+.git add material-tailwind-qb-*.tgz
 .tgz
