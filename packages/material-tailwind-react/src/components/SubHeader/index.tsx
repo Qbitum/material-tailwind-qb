@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
-import { FaArrowLeft, FaHome } from "react-icons/fa";
 import React from "react";
 import Typography from "../Typography";
 import Button from "../Button";
+import { ArrowLeftIcon, HomeIcon } from "@heroicons/react/24/outline";
 
 export type SubHeaderProps = {
   buttonText: string;
@@ -34,7 +34,7 @@ export function SubHeader({
     leftContent = (
       <div className="flex items-center gap-1" onClick={handleHomeClick}>
         <Typography variant="h6" className="text-gray-800 mr-2">
-        <FaHome className="text-black" />
+          <HomeIcon className="flex text-black" />
           Home
         </Typography>
       </div>
@@ -42,7 +42,7 @@ export function SubHeader({
   } else if (leftCorner === "back") {
     leftContent = (
       <div className="flex items-center text-2xl" onClick={handleHomeClick}>
-               <FaArrowLeft className="flex text-black" />
+               <ArrowLeftIcon className="flex text-black" />
 
         <Button
           variant="text"

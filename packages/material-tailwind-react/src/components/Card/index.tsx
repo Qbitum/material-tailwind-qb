@@ -14,6 +14,7 @@ import { useTheme } from "../../context/theme";
 import { CardHeader, CardHeaderProps } from "./CardHeader";
 import { CardBody, CardBodyProps } from "./CardBody";
 import { CardFooter, CardFooterProps } from "./CardFooter";
+import { CardHomePage, CardHomePageProps } from "./CardHomePage";
 
 // types
 import type { variant, color, shadow, className, children } from "../../types/components/card";
@@ -77,9 +78,9 @@ Card.propTypes = {
 
 Card.displayName = "MaterialTailwind.Card";
 
-export type { CardHeaderProps, CardBodyProps, CardFooterProps };
-export { Card, CardHeader, CardBody, CardFooter };
-export default Object.assign(Card, {
+export type { CardHeaderProps, CardBodyProps, CardFooterProps, CardHomePageProps };
+export { Card, CardHeader, CardBody, CardFooter, CardHomePage };
+export default Object.assign(Card, CardHomePage, {
   Header: CardHeader,
   Body: CardBody,
   Footer: CardFooter,
