@@ -19,8 +19,8 @@
       "@utils": ["./utils/index.ts"],
       "@widgets": ["./widgets/index.ts"],
       "@material-tailwind/react": [
-        "./packages/material-tailwind-react/src/index.ts"
-      ]
+        "./packages/material-tailwind-react/src/index.ts"],
+        "@heroicons/*": ["node_modules/@heroicons/*"]
     }
   },
   "include": [
