@@ -2,6 +2,12 @@
 ## @material-tailwind/react
 ###
 publish npm library
+
+# npm run script
+npm run release -- --release-as minor
+# Or
+npm run release -- --release-as 1.1.0
+
 npm publish <package name>
 
 ### Documentation
