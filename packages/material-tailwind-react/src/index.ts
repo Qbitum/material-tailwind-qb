@@ -36,6 +36,7 @@ export * from "./components/SpeedDial";
 export * from "./components/FileUpload";
 export * from "./components/Page";
 export * from "./components/SuccessPopUp";
+export * from "./components/PageWrapper";
 // context
 export * from "./context/theme";
 

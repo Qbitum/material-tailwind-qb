@@ -20,7 +20,7 @@ import type {
   className,
   children,
   padding,
-} from "../../types/components/page";
+} from "../../types/components/pageWrapper";
 import {
   propTypesVariant,
   propTypesColor,
@@ -30,9 +30,9 @@ import {
   propTypesClassName,
   propTypesChildren,
   propTypesPadding,
-} from "../../types/components/page";
+} from "../../types/components/pageWrapper";
 
-export interface PageProps extends React.ComponentProps<"div"> {
+export interface PageWrapperProps extends React.ComponentProps<"div"> {
   variant?: variant;
   color?: color;
   shadow?: shadow;
@@ -43,11 +43,11 @@ export interface PageProps extends React.ComponentProps<"div"> {
   children: children;
 }
 
-const Page = React.forwardRef<HTMLDivElement, PageProps>(
+const PageWrapper = React.forwardRef<HTMLDivElement, PageWrapperProps>(
   ({ variant, color, shadow, blurred, fullWidth,padding, className, children, ...rest }, ref) => {
     // 1. init
-    const { page } = useTheme();
-    const { defaultProps, valid, styles } = page;
+    const { pageWrapper } = useTheme();
+    const { defaultProps, valid, styles } = pageWrapper;
     const { base, variants } = styles;
 
     // 2. set default props
@@ -56,35 +56,35 @@ const Page = React.forwardRef<HTMLDivElement, PageProps>(
     shadow = shadow ?? defaultProps.shadow;
     blurred = blurred ?? defaultProps.blurred;
     fullWidth = fullWidth ?? defaultProps.fullWidth;
-    padding = padding ?? defaultProps.padding ?? 'p-2';
+    padding = padding ?? defaultProps.padding ?? 'p-1';
     className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
-    const pageRoot = classnames(objectsToString(base.page.initial), {
-      [objectsToString(base.page.shadow)]: shadow,
-      [objectsToString(base.page.blurred)]: blurred && color === "white",
-      [objectsToString(base.page.fullWidth)]: fullWidth,
+    const pageWrapperRoot = classnames(objectsToString(base.pageWrapper.initial), {
+      [objectsToString(base.pageWrapper.shadow)]: shadow,
+      [objectsToString(base.pageWrapper.blurred)]: blurred && color === "white",
+      [objectsToString(base.pageWrapper.fullWidth)]: fullWidth,
       [padding]: !!padding,
     });
-    const pageVariant = classnames(
+    const pageWrapperVariant = classnames(
       objectsToString(
         variants[findMatch(valid.variants, variant, "filled")][
-          findMatch(valid.colors, color, "bg-gray-200")
+          findMatch(valid.colors, color, "bg-gray-100")
         ],
       ),
     );
-    const pageClasses = twMerge(classnames(pageRoot, pageVariant), className);
+    const pageWrapperClasses = twMerge(classnames(pageWrapperRoot, pageWrapperVariant), className);
 
     // 4. return
     return (
-      <nav {...rest} ref={ref} className={pageClasses}>
+      <nav {...rest} ref={ref} className={pageWrapperClasses}>
         {children}
       </nav>
     );
   },
 );
 
-Page.propTypes = {
+PageWrapper.propTypes = {
   variant: PropTypes.oneOf(propTypesVariant),
   color: PropTypes.oneOf(propTypesColor),
   shadow: propTypesShadow,
@@ -95,8 +95,8 @@ Page.propTypes = {
   children: propTypesChildren,
 };
 
-Page.displayName = "MaterialTailwind.Page";
+PageWrapper.displayName = "MaterialTailwind.PageWrapper";
 
 
-export { Page };
-export default Object.assign(Page);
+export { PageWrapper };
+export default Object.assign(PageWrapper);

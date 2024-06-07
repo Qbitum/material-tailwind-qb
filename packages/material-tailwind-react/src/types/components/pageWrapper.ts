@@ -11,7 +11,7 @@ import { propTypesColors, propTypesAnimation } from "../generic";
 
 // typescript types
 export type variant = "filled" | "gradient";
-export type color = "transparent" | "white" | "gray" | colors;
+export type color = "transparent" | "white" | "bg-gray-100" | colors;
 export type shadow = boolean;
 export type blurred = boolean;
 export type fullWidth = boolean;
@@ -23,7 +23,7 @@ export type padding = string;
 
 // javascript prop-types
 export const propTypesVariant: any = ["filled", "gradient"];
-export const propTypesColor: any = ["bg-gray-300","transparent", "white", ...propTypesColors];
+export const propTypesColor: any = ["bg-gray-100","transparent", "white", ...propTypesColors];
 export const propTypesShadow: any = PropTypes.bool;
 export const propTypesBlurred: any = PropTypes.bool;
 export const propTypesFullWidth: any = PropTypes.bool;
