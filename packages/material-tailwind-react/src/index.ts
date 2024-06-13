@@ -37,8 +37,12 @@ export * from "./components/FileUpload";
 export * from "./components/Page";
 export * from "./components/SuccessPopUp";
 export * from "./components/PageWrapper";
+export * from "./components/Table";
 // context
 export * from "./context/theme";
 
 // theme
 export * from "./theme/index";
+
+//qbitum
+export * from "./components/CriptoTable"
