@@ -1,5 +1,4 @@
-import { useRouter } from "next/router";
-import { FaArrowLeft, FaHome } from "react-icons/fa";
+
 import React from "react";
 import Typography from "../Typography";
 import Button from "../Button";
@@ -17,36 +16,26 @@ export function SubHeader({
   buttonShow,
   leftCorner,
 }: SubHeaderProps) {
-  const router = useRouter();
-  const pathName = router.pathname.split("/").pop();
 
-  const handleHomeClick = () => {
-    router.push("/homePage");
-  };
-
-  const handleBackClick = () => {
-    router.back();
-  };
-
+  
   let leftContent = null;
 
   if (leftCorner === "home") {
     leftContent = (
-      <div className="flex items-center gap-1" onClick={handleHomeClick}>
+      <div className="flex items-center gap-1">
         <Typography variant="h6" className="text-gray-800 mr-2">
-        <FaHome className="text-black" />
+        {/* <FaHome className="text-black" /> */}
           Home
         </Typography>
       </div>
     );
   } else if (leftCorner === "back") {
     leftContent = (
-      <div className="flex items-center text-2xl" onClick={handleHomeClick}>
-               <FaArrowLeft className="flex text-black" />
+      <div className="flex items-center text-2xl" >
+               {/* <FaArrowLeft className="flex text-black" /> */}
 
         <Button
           variant="text"
-          onClick={handleBackClick}
           className="text-xl"
         > 
           Back
@@ -60,8 +49,8 @@ export function SubHeader({
       <div className="flex items-center gap-2">
         {leftContent}
         {leftContent && <div className="h-full w-px bg-gray-500 mx-2"></div>}
-        <Typography variant="h6" className="text-gray-800 text-3xl font-bold font-['Roboto']">
-          {pathName ? pathName.charAt(0).toUpperCase() + pathName.slice(1) : 'Home'}
+        <Typography variant="h6" className="text-gray-800 text-3xl font-bold font-['Roboto']" >hi
+          {/* {pathName ? pathName.charAt(0).toUpperCase() + pathName.slice(1) : 'Home'} */}
         </Typography>
       </div>
       {buttonShow && (

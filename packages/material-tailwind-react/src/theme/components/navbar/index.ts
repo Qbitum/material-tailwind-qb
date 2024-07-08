@@ -72,8 +72,8 @@ export const navbar: NavbarStylesType = {
         blurred: {
           backdropFilter: "backdrop-saturate-200 backdrop-blur-2xl",
           bgOpacity: "bg-opacity-80",
-          borderWidth: "border",
-          borderColor: "border-white/80",
+          borderWidth: "",
+          borderColor: "",
         },
         fullWidth: {
           width: "w-full",

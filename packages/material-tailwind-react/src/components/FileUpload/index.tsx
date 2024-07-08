@@ -37,8 +37,7 @@
 
 // export default FileUpload;
 import React from "react";
-import { ArrowUpTrayIcon } from "@heroicons/react/24/outline";
-import { TrashIcon } from "@heroicons/react/24/solid";
+
 import Button from "../Button";
 import Dialog, { DialogHeader, DialogBody, DialogFooter } from "../Dialog";
 import IconButton from "../IconButton";
@@ -76,9 +75,9 @@ function ImageCard({ img, name, size }: MembersProps) {
             </Typography>
           </div>
         </div>
-        <IconButton size="sm" variant="text">
+        {/* <IconButton size="sm" variant="text">
           <TrashIcon className="w-5 h-5 text-gray-500" />
-        </IconButton>
+        </IconButton> */}
       </div>
     </div>
   );
@@ -144,12 +143,12 @@ export function FileUpload() {
             className="grid place-items-center py-10 rounded-lg border border-dashed border-gray-300 mt-6"
           >
             <input type="file" id="upload" className="hidden" />
-            <IconButton variant="text" className="mb-4">
-              <ArrowUpTrayIcon
+            <IconButton variant="text" className="mb-4" >hi</IconButton>
+              {/* <ArrowUpTrayIcon
                 className="h-8 w-8 text-gray-900"
                 strokeWidth={2}
-              />
-            </IconButton>
+              /> */}
+            
             <Typography color="blue-gray" className="mb-1 font-bold">
               Drag and Drop or{" "}
               <a href="#" className="underline">
